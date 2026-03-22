@@ -1,3 +1,4 @@
 echo package-lock.json >> "Week 3/.gitignore"
 echo req.http >> "Week 3/.gitignore"
 echo server.js >> "Week 3/.gitignore"
+echo .env >> "Week 3/.gitignore"
