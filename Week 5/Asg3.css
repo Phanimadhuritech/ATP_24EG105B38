@@ -1,0 +1,25 @@
+table{
+    width: 500px;
+    margin: auto;
+    margin-top:90px;
+}
+table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+thead{
+    text-align: left;
+}
+td{
+    text-align: center;
+}
+.dd{
+  padding-left:30px;
+}
+td:hover{
+    background-color: rgb(22, 121, 226);
+    color: aliceblue;
+}
+th:hover{
+    background-color: black;
+}
