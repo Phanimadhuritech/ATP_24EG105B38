@@ -1,0 +1,52 @@
+.parent{
+    margin:100px;
+    display:flex;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    box-shadow:1px 1px 10px gray;
+    position: absolute;
+    align-items: center;
+    background-color: mistyrose;
+
+}
+.emp-card{
+    box-shadow: 1px 1px 20px gray;
+    padding: 10px;
+    padding-top: 10px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    position: relative;
+
+}
+/* .emp-card{
+    box-shadow: 1px 1px 20px gray;
+    border-radius: 10px;
+}
+.emp-card{
+    box-shadow: 1x 1px 20px gray;
+    border-radius: 10px;
+}
+.emp-card{
+    box-shadow: 1px 1px 20px gray;
+    border-radius: 10px; 
+} */
+
+.em-card::after {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 85%; /* Adjust to fit img */
+    box-sizing: border-box;
+}
+img{
+    height:200px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    border-radius: 100%;
+    position: relative;
+    z-index: 1;
+}
