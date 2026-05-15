@@ -1,0 +1,13 @@
+import {NavLink} from "react-router-dom";
+
+function Java() {
+  return (
+    <div>
+      <h1 className="text-center text-2xl">Java</h1>
+      <p className='text-center'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora doloremque ut vero voluptatibus illo quae maiores magni saepe quos, non culpa praesentium repudiandae accusantium error alias recusandae! Et, facilis explicabo! Obcaecati ipsum ea veniam quos! Laborum totam nesciunt aut unde, dolor tempore eius error temporibus voluptates optio soluta rem. Rem quasi explicabo dignissimos cupiditate pariatur quia eaque? Saepe dolorum non repellat ipsa itaque nesciunt aut iure, unde ab tempore modi maxime voluptates atque doloremque, sed dolores incidunt odit esse culpa alias sunt neque consequatur dolor! Porro sed, praesentium maxime alias culpa beatae iste fugiat dolore voluptates magnam magni officia veniam perferendis, voluptatibus facilis nihil quod tenetur quam eum. Doloribus officia iure aliquam eaque animi aspernatur laboriosam sunt, quas eligendi hic magnam expedita sint tempore iusto! Iure pariatur praesentium, beatae, quasi officia assumenda tempore doloribus velit illo sunt reiciendis nulla iusto optio ut nam expedita? Libero quis sit, eveniet vitae aperiam error magnam esse? Dicta eum corporis optio in incidunt impedit explicabo consectetur veniam excepturi atque autem laborum voluptates id, ipsa beatae obcaecati facere, culpa nostrum est amet, vel maxime? Cupiditate unde cum itaque magnam odio rerum sed possimus est? Cupiditate dolorem officia velit in facere odio reprehenderit dignissimos doloremque consequuntur! Odio assumenda eligendi sint rerum, rem recusandae labore maxime ratione commodi similique dolore iste quam ducimus id quaerat ex reiciendis temporibus soluta nisi? Officiis, cum incidunt corporis enim debitis exercitationem nulla atque. Similique laudantium dolorum debitis eveniet provident eaque porro velit veritatis, numquam, consequatur saepe sapiente recusandae? Fugiat consequuntur minus voluptatibus aperiam recusandae quaerat nesciunt laudantium eligendi non? Voluptatibus libero officia reiciendis incidunt nisi? Fuga consequatur quos vero modi iure doloremque explicabo vel cumque iusto assumenda vitae fugiat eveniet ex error, incidunt necessitatibus nemo ad inventore. Debitis, voluptatibus aliquid consequuntur possimus laboriosam cupiditate quae, quo magnam accusamus tempora praesentium vero.
+    </p>
+    </div>
+  )
+}
+
+export default Java

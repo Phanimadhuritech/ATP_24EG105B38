@@ -1,0 +1,66 @@
+import {createBrowserRouter,RouterProvider,Navigate} from 'react-router-dom'
+import RootLayout from './components/RootLayout'
+import Home from './components/Home'
+import Register from './components/Register'
+import Login from './components/Login'
+import Technologies from './components/Technologies'
+import Java from './components/Java'
+import Nodejs from './components/Nodejs'
+import Vue from './components/Vue'
+
+function App() {
+   //adding routing comfiguration here
+  const routerObj = createBrowserRouter([
+    {
+      path:"/",
+      element:<RootLayout />,
+      children:[
+        // children of rootlayout
+        {
+          path:"",
+          element:<Home />
+        },
+
+        {
+          path:"register",
+          element:<Register />
+        },
+
+        {
+          path:"login",
+          element:<Login />
+        },
+
+        {
+          path:"technologies",
+          element:<Technologies />,
+          // children of technologies
+            children:[
+             {
+              index:true,
+              element:<Navigate to = "java" replace />
+             },
+             {
+                path:"java",
+                element:<Java />
+             },
+             {
+                path:"nodejs",
+                element:<Nodejs />
+             },
+             {
+                path:"vue",
+                element:<Vue />
+             }
+           ]
+        }
+      ]
+    }
+  ])
+
+  return (
+    <RouterProvider router ={routerObj} />
+  )
+}
+
+export default App

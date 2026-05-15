@@ -1,0 +1,12 @@
+import React from 'react'
+
+function Vue() {
+  return (
+    <div>
+      <h1 className='text-center'>Vue</h1>
+      <p className='text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, libero expedita ducimus perferendis corrupti, distinctio error placeat aut magni ratione sapiente, quasi omnis vel unde veniam temporibus? Enim nostrum ea culpa corporis voluptatibus veniam provident repudiandae. Id a ipsam aspernatur odit modi dicta assumenda dolorum ea inventore provident, hic, iure repellendus perferendis nobis eos, deserunt maxime temporibus quasi! Officiis neque in asperiores harum. Sunt quas distinctio, id, esse voluptatum quam velit eos doloremque itaque odit nostrum officia excepturi non odio! Distinctio consectetur deleniti dolorem quia nam enim explicabo quasi aliquam doloribus, atque quod quaerat officiis cupiditate mollitia iure laborum quam eveniet? Quam tempore exercitationem quaerat rerum, quibusdam odit sed sequi cumque eius hic voluptas repellendus libero eligendi aspernatur? Magnam itaque tempore ea dolore tempora, necessitatibus dolorum error sapiente commodi assumenda libero corrupti placeat doloremque deserunt expedita sint porro mollitia officia, minus neque ab suscipit quo perferendis fuga. Sed maiores neque nostrum hic, corrupti esse possimus iste eaque laudantium commodi, reprehenderit saepe rerum omnis provident libero harum, quaerat cupiditate facere eveniet! Repudiandae dolorum, asperiores id error facere repellat assumenda officia voluptate doloremque ratione optio explicabo. Recusandae ducimus commodi maiores cum dolores nam minima excepturi perspiciatis, porro eum. Incidunt autem rerum voluptate ipsum illo, rem pariatur, debitis dolor molestias magni dolorem. Voluptatum minus, facere quos facilis nemo vero obcaecati delectus. Obcaecati fugit consectetur et ratione? Laudantium velit nemo voluptatem dolor voluptates non tenetur laborum consequuntur. Tenetur aspernatur enim necessitatibus nostrum quos. Consequuntur soluta ea, ducimus veritatis eveniet accusantium repellendus dolore magnam explicabo. Labore reiciendis, voluptate eveniet debitis similique eum cupiditate praesentium nihil eos sequi impedit repudiandae explicabo provident molestias exercitationem molestiae quaerat culpa in excepturi earum ab facere assumenda! Impedit explicabo, alias voluptas consequuntur vel magnam quod unde nesciunt voluptatem assumenda deserunt non vitae neque eveniet, quam dicta maxime, rerum modi suscipit.</p>
+    </div>
+  )
+}
+
+export default Vue

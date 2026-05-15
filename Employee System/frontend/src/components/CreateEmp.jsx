@@ -4,62 +4,111 @@ import { useNavigate } from "react-router-dom";
 
 function CreateEmp() {
   const [loading, setLoading] = useState(false);
-  const [error,setError]=useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
-  //form submit
-  const onFormSubmit = async (newEmpObj) => {
-    try{
+  const onFormSubmit = async (data) => {
+    try {
       setLoading(true);
-      //make HTTP POST req to create new employee
-      let res = await fetch("http://localhost:5000/employee-api/employees" ,{
-        method:"POST",
-        headers: { "Content-Type":"application/json"},
-        body: JSON.stringify(newEmpObj),
-      });
+      setError("");
+
+      // Correct employee object
+      const newEmpObj = {
+        name: data.name.trim(),
+        email: data.email.trim(),
+        mobile: String(data.mobile).trim(),
+        designation: data.designation.trim(),
+        companyName: data.companyName.trim(),
+      };
+
+      const res = await fetch(
+        "https://emp-management-app.onrender.com/employee-api/employees",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newEmpObj),
+        }
+      );
+
+      const result = await res.json();
 
       if (res.status === 201) {
-        //navigate to employees component programatically
+        reset();
         navigate("/list");
       } else {
-        let errorRes = await res.json();
-        console.log("error response is ",errorRes);
-        throw new Error(errorRes.reason);
+        throw new Error(result.message || "Something went wrong");
       }
     } catch (err) {
-      console.log("err in catch",err);
-      //deal with err
       setError(err.message);
     } finally {
       setLoading(false);
     }
   };
-  console.log(error);
 
-  if(loading){
-    return <p className="text-center text-4xl">Loading....</p>
-  }
-  if(error){
-    return <p className="text-red-600 text-center text-3xl">{error}</p>
-  }
+  if (loading)
+    return <p className="text-center text-3xl mt-10">Loading...</p>;
 
   return (
-    <div>
-      <h1 className="text-5xl text-center text-gray-600">Create New Employee</h1>
-      {/* form */}
-      <form className=" max-w-md mx-auto mt-10" onSubmit={handleSubmit(onFormSubmit)}>
-        <input type="text" placeholder="Enter name" {...register("name")} className="mb-3 border-2 p-3 w-full rounded-2xl" />
-        <input type="email" placeholder="Enter Email" {...register("email")} className="mb-3 border-2 p-3 w-full rounded-2xl" />
-        <input type="number" placeholder="Enter mobile number" {...register("mobile")} className="mb-3 border-2 p-3 w-full rounded-2xl" />
-        <input type="text" placeholder="Enter designation" {...register("designation")} className="mb-3 border-2 p-3 w-full rounded-2xl" />
-        <input type="text" placeholder="Enter name of the company" {...register("companyName")} className="mb-3 border-2 p-3 w-full rounded-2xl" />
-        <button type="submit" className="text-2xl rounded-2xl bg-gray-600 text-white block mx-auto p-4">Add Employee</button>
+    <div className="p-5">
+      <h1 className="text-5xl text-center mb-10 font-bold">
+        Create Employee
+      </h1>
+
+      {error && (
+        <p className="text-red-600 text-center text-xl mb-5">
+          {error}
+        </p>
+      )}
+
+      <form
+        className="max-w-md mx-auto"
+        onSubmit={handleSubmit(onFormSubmit)}
+      >
+        <input
+          type="text"
+          placeholder="Enter name"
+          {...register("name", { required: true })}
+          className="border p-3 w-full mb-3 rounded"
+        />
+
+        <input
+          type="email"
+          placeholder="Enter email"
+          {...register("email", { required: true })}
+          className="border p-3 w-full mb-3 rounded"
+        />
+
+        <input
+          type="text"
+          placeholder="Enter mobile"
+          {...register("mobile", { required: true })}
+          className="border p-3 w-full mb-3 rounded"
+        />
+
+        <input
+          type="text"
+          placeholder="Enter designation"
+          {...register("designation", { required: true })}
+          className="border p-3 w-full mb-3 rounded"
+        />
+
+        <input
+          type="text"
+          placeholder="Enter company name"
+          {...register("companyName", { required: true })}
+          className="border p-3 w-full mb-3 rounded"
+        />
+
+        <button
+          type="submit"
+          className="bg-gray-700 hover:bg-gray-900 text-white p-3 w-full rounded"
+        >
+          Add Employee
+        </button>
       </form>
     </div>
   );
